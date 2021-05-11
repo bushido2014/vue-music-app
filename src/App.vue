@@ -18,10 +18,10 @@
       </section>
       <section class="playlist">
         <h3 class="font-normal text-3xl mb-8 text-center">The Playlist</h3>
-        <button v-for="song in songs" :key="song.src" @click="play(song)"
+        <div v-for="song in songs" :key="song.src" @click="play(song)"
          :class="(song.src == current.src) ? 'song playing' : 'song'">
           {{song.title}} -- {{song.artist}}
-        </button>
+        </div>
       </section>
     </main>
     </div>
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import './assets/css/main.css'
+
 
 export default {
  name: 'app',
@@ -39,6 +39,11 @@ export default {
      index: 0,
      isPlaying: false,
      songs: [
+       {
+         title: 'Immensity',
+         artist: 'Jella',
+         src: require('./assets/jella-immensity.mp3')
+       },
        {
          title: 'AK Discovery',
          artist: 'Neffix',
@@ -107,44 +112,14 @@ export default {
 }
 </script>
 
+
+
+
 <style>
 #app {
   min-width: 320px;
 }
-button {
-  @apply rounded-md transition-all duration-200;
-}
-button:focus {
-  @apply outline-none;
-}
-button:hover {
-  @apply opacity-75;
-}
-.play, .pause {
-  
-  @apply bg-blue-900 font-bold py-4 px-8 mx-3 text-white text-xl; 
-}
-.next, .prev {
-  
-  @apply text-white py-2 px-4 font-bold mx-5 bg-red-500; 
 
-}
-.playlist {
-  
-  @apply px-10;
-  
-}
-
-.playlist .song {
-  @apply block w-full p-4 text-lg font-bold cursor-pointer;
-  
-} 
-.playlist .song:hover {
-  @apply text-red-500;
-} 
-.playlist .song.playing {
-  @apply bg-red-500 text-white;
-}
 
 
 </style>

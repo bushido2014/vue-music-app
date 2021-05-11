@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+    @apply rounded-md transition-all duration-200;
+  }
+  button:focus {
+    @apply outline-none;
+  }
+  button:hover {
+    @apply opacity-75;
+  }
+  .play, .pause {
+    
+    @apply bg-blue-900 font-bold py-4 px-8 mx-3 text-white text-xl; 
+  }
+  .next, .prev {
+    
+    @apply text-white py-2 px-4 font-bold mx-5 bg-red-500; 
+  
+  }
+  .playlist {
+    
+    @apply px-10;
+    
+  }
+  
+  .playlist .song {
+    @apply block w-full p-4 text-lg font-bold cursor-pointer text-center;
+    
+    
+  } 
+  .playlist .song:hover {
+    @apply text-red-500 transition-all duration-200;
+  } 
+  .playlist .song.playing {
+    @apply text-red-500;
+  }
