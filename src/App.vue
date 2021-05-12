@@ -53,13 +53,7 @@ export default {
          title: 'Rasi Zamin',
          artist: 'Rasi',
          src: require('./assets/rasi_zamin.mp3')
-       },
-       {
-         title: 'Driving',
-         artist: 'Sro Driving',
-         src: require('./assets/sro-driving.mp3')
        }
-
      ], 
      player: new Audio()
    }
